@@ -3,6 +3,7 @@ import './App.css';
 import { GoogleLogin } from 'react-google-login'
 import axios from 'axios'
 import { useState } from 'react';
+import { gapi } from "gapi-script";
 function App() {
 
   const responseGoogle = response => {
@@ -45,11 +46,14 @@ function App() {
       </div>
       {
         !signIn ? (<div>
-          <GoogleLogin clientId='381577986964-scht8fd1d758n3sv5u6jmga46t5h2gfi.apps.googleusercontent.com'
+          <GoogleLogin
+            clientId='102371188678-1e1nbt8faq6ojk3hrr0hd8il1f8h8eiv.apps.googleusercontent.com'
+            // 102371188678-1e1nbt8faq6ojk3hrr0hd8il1f8h8eiv.apps.googleusercontent.com
+            // clientId='381577986964-scht8fd1d758n3sv5u6jmga46t5h2gfi.apps.googleusercontent.com'
             buttonText='Sign in & Authorize Calendar'
-            render={renderProps => (
-              <button onClick={renderProps.onClick} disabled={renderProps.disabled}>This is my custom Google button</button>
-            )}
+            // render={renderProps => (
+            //   <button onClick={renderProps.onClick} disabled={renderProps.disabled}>This is my custom Google button</button>
+            // )}
             onSuccess={responseGoogle}
             onFailure={responseError}
             cookiePolicy={'single_host_origin'}
